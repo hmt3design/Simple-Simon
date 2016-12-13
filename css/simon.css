@@ -37,7 +37,7 @@
 .btn {
     opacity:0.2;
 }
-.btn:active {
+.active {
     opacity: 1;
 }
 th, td {
