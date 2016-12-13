@@ -4,17 +4,30 @@
 $(document).ready(function(){
     "use strict";
 
+    var currentArray = [];
+    var level = 0;
+    var squares = $('.square');
+
     //Create click function for buttons
     $(".btn").click(function(){
         $(this).addClass("active");
     });
 
-    var currentArray = [];
+    // Generate animation for Simon's turn
+    var animate = function (square) {
+        $(square).addClass("btn:active");
+        setTimeout(function () {
+            $(square).removeClass("btn:active")
+        }, 1000);
+    };
 
-    // Generate easy array function that generates when Easy button is clicked
+    var generateSimonsChoice = function () {
+        currentArray.push(squares[Math.floor(Math.random()*4)]);
+    };
+
     $("#easy").click(function () {
-        currentArray = Array.from({length: 10}, () => Math.floor(Math.random()*4)+1);
-        animate(currentArray);
+        generateSimonsChoice(10);
+        simonTurn(currentArray);
         // checkArray();
         console.log(currentArray);
     });
@@ -32,31 +45,11 @@ $(document).ready(function(){
     });
 
 
-    var animate = function (simonArray) {
-        simonArray.forEach(function(element) {
-                if (element == 1) {
-                    $("#redBox").addClass("btn:active");
-                    setTimeout(function () {
-                        $("#redBox").removeClass("btn:active")
-                    }, 1000);
-                } else if (element == 2) {
-                    $("#greenBox").addClass("btn:active");
-                    setTimeout(function () {
-                        $("#greenBox").removeClass("btn:active")
-                    }, 1000);
-                } else if (element == 3) {
-                    $("#blueBox").addClass("btn:active");
-                    setTimeout(function () {
-                        $("#blueBox").removeClass("btn:active")
-                    }, 1000);
-                } else if (element == 4) {
-                    $("#redBox").addClass("btn:active");
-                    setTimeout(function () {
-                        $("#redBox").removeClass("btn:active")
-                    }, 1000);
-                }
+    var simonTurn = function (simonArray) {
+        simonArray.forEach(function(square) {
+            animate(square);
         });
-    }
+    };
     // });
 
 });
