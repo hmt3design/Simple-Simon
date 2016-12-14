@@ -43,3 +43,41 @@
 th, td {
     padding: 5px;
 }
+
+.LCARS_color1{
+    background-color:#9999cc;
+}
+
+.LCARS_color2{
+    background-color:#9999ff;
+    display: inline;
+}
+
+.LCARS_color3{
+    background-color:#cc99cc;
+}
+
+.LCARS_color4{
+    background-color:#cc6699;
+}
+
+.LCARS_color5{
+    background-color:#cc6666;
+}
+
+.LCARS_color6{
+    background-color:#ff9966;
+}
+
+.LCARS_color7{
+    background-color:#ff9900;
+}
+
+.LCARS_color8{
+    background-color:#ffcc66;
+    padding-left: 15px;
+}
+
+.LCARS_highlight{
+    background-color:#ff9900;
+}
