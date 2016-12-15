@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple Simon game</title>
-    <link rel="stylesheet" href="css/flexbox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style-2.css">
+    <link rel="stylesheet" href="css/flexbox.css">
+    <link rel="stylesheet" href="css/simon.css">
+
 </head>
 <body>
-<img src="img/Simon_header.png" alt=""><br>
-<button class="tb2">Start</button>
+<div class="flex-container">
+    <div class="header">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 90"><defs><style>.cls-1{fill:#dfa047;}.cls-2{fill:#f1d167;}.cls-3{    font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: x-large;}.cls-4{letter-spacing:0.02em;}</style></defs><title>Top_bar</title><path class="cls-1" d="M645,0H615V30h30a15,15,0,0,0,0-30Z"/><rect class="cls-2" x="305" width="305" height="30"/><path class="cls-1" d="M150,0H75C33.58,0,0,33.39,0,74.59V90H150V67.13A37.26,37.26,0,0,1,187.5,30H300V0Z"/><text class="cls-3" transform="translate(310 24.1)">SIMPLE SIMON GAME</text></svg>
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <td><div id="redBox" class="btn square"></div></td>
+                <td><div id="greenBox" class="btn square"></div></td>
+            </tr>
+            <tr>
+                <td><div id="blueBox" class="btn square"></div></td>
+                <td><div id="yellowBox" class="btn square"></div></td>
+            </tr>
+        </table>
+    </div>
+    <div class="sidebar primary">
+        <div class="side tb1">GNDN</div><br>
+        <input type="button" id="start" value="Start"><br>
+        <div id="counter" class="side tb1">Round: </div><br>
+        <div class="side tb1">GNDN</div>
+    </div>
+    <div class="footer"><p>Footer</p></div>
+</div>
 </body>
+<script src="js/simon.js"></script>
 </html>
+
