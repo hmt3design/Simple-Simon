@@ -8,6 +8,7 @@ $(document).ready(function(){
     var squares = $('.square');
     var counter = 0;
     var enableClicks = false;
+    var gameRound = 1;
 
     //Create click function for buttons
     var userTurn = function () {
@@ -21,7 +22,6 @@ $(document).ready(function(){
             animate(squareClicked);
             if(squareClicked === simonArray[counter]) {
                 counter += 1;
-                document.getElementById('counter').innerHTML = counter;
                 if (counter === simonArray.length) {
                     // reset counter
                     counter = 0;
@@ -35,7 +35,7 @@ $(document).ready(function(){
                 alert("Sorry, you entered the wrong sequence. Game over. Want to try again?");
                     simonArray = [];
                     counter = 0;
-                    document.getElementById("counter").innerHTML = counter;
+                    gameRound = 1;
                     $("#start").prop("disabled", false);
             }
         }
@@ -69,9 +69,12 @@ $(document).ready(function(){
             setTimeout(function () {
                 animate(square);
             }, timer * i);
-            console.log(square);
+            // console.log(square);
         });
         userTurn();
+        gameRound += 1;
+            document.getElementById('counter').innerHTML = gameRound;
+            // console.log(gameRound);
     };
 
 });
