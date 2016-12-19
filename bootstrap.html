@@ -8,9 +8,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Six+Caps" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap_local.css">
+    <link rel="stylesheet" href="css/simon.css">
     <title>Blog Template for Bootstrap</title>
 </head>
 
@@ -20,21 +20,23 @@
 
 <div class="container">
 
-        <div class="row">
-            <div class="col-md-2"><p>Box md1</p></div>
-            <div class="col-md-10"><p>Box md2</p></div>
-            <div class="col-sm-2"><p>Box sm1</p></div>
-            <div class="col-sm-10"><p>Box sm2</p></div>
-            <div class="col-xs-5"><p>Box xs1</p></div>
-            <div class="col-xs-7"><p>Box xs2</p></div>
-        </div>
+        <!--<div class="row">-->
+            <!--<div class="col-md-2"><p>Box md1</p></div>-->
+            <!--<div class="col-md-10"><p>Box md2</p></div>-->
+            <!--<div class="col-md-6"><p>Box md1</p></div>-->
+            <!--<div class="col-md-6"><p>Box md2</p></div>-->
+            <!--<div class="col-sm-2"><p>Box sm1</p></div>-->
+            <!--<div class="col-sm-10"><p>Box sm2</p></div>-->
+            <!--<div class="col-xs-5"><p>Box xs1</p></div>-->
+            <!--<div class="col-xs-7"><p>Box xs2</p></div>-->
+        <!--</div>-->
 
 
 
     <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-6 col-sm-6 col-xs-11">
             <div class="svg-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 90" preserveAspectRatio="xMinYMin meet" class="svg-content"><defs><style>.cls-1{fill:#dfa047;}.cls-2{fill:#f1d167;}.cls-3{font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: x-large;}.cls-4{letter-spacing:0.02em;}</style></defs><title>Top_bar</title><path class="cls-1" d="M495,0H465V30h30a15,15,0,0,0,0-30Z"/><rect class="cls-2" x="205" width="255" height="30"/><path class="cls-1" d="M150,0H75C33.58,0,0,33.39,0,74.59V90H150V67.13A37.26,37.26,0,0,1,187.5,30H200V0Z"/><text class="cls-3" transform="translate(215 24.1)">SIMPLE SIMON GAME</text></svg>
+                <svg viewBox="0 0 510 90"><title>Top_bar</title><path class="cls-1" d="M495,0H465V30h30a15,15,0,0,0,0-30Z"/><rect class="cls-2" x="205" width="255" height="30"/><path class="cls-1" d="M150,0H75C33.58,0,0,33.39,0,74.59V90H149.5V67.13C149.5,46.53,169.29,30,190,30h10V0Z"/><text class="cls-3" transform="translate(215 24.1)">SIMPLE SIMON GAME</text></svg>
             </div>
         </div>
     </div>
@@ -42,40 +44,44 @@
     <div class="row">
 
         <div class="col-md-2 col-sm-2 col-xs-4">
-            <div class="side tb1">GNDN</div><br>
-            <input type="button" id="start" value="Start"><br>
-            <div id="counter" class="side tb1">Round: </div><br>
-            <div class="side tb1">GNDN</div>
-        </div><!-- /.blog-sidebar -->
+            <div class="svg-container">
+                <svg viewBox="0 0 152 60"><rect class="cls-2" width="152" height="60"/><text class="cls-3" transform="translate(120 54)">GNDN</text></svg>
+                <svg id="start" cursor="pointer" viewBox="0 0 152 60"><rect class="cls-1" width="152" height="60"/><text class="cls-3" transform="translate(116 54)">START</text></svg>
+                <svg viewBox="0 0 152 60"><rect class="cls-2" width="152" height="60"/><text id="counter" class="cls-3" transform="translate(100 54)">ROUND: </text></svg>
+                <svg viewBox="0 0 152 60"><rect class="cls-4" width="152" height="60"/><text class="cls-3" transform="translate(120 54)">GNDN</text></svg>
+            </div>
+        </div>
 
         <div class="col-md-10 col-sm-10 col-xs-8">
-            <table>
+            <table id="Simon-game">
                 <tr>
                     <td>
-                        <audio src="sounds/Note1.mp3" type="audio/mp3"></audio>
+                        <audio src="sounds/redBox.mp3" id="redBoxAudio" type="audio/mp3"></audio>
                         <div id="redBox" class="btn square"></div>
                     </td>
                     <td>
-                        <audio src="sounds/Note2.mp3" type="audio/mp3"></audio>
+                        <audio src="sounds/greenBox.mp3" id="greenBoxAudio" type="audio/mp3"></audio>
                         <div id="greenBox" class="btn square"></div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <audio src="sounds/Note3.mp3" type="audio/mp3"></audio>
+                        <audio src="sounds/blueBox.mp3" id="blueBoxAudio" type="audio/mp3"></audio>
                         <div id="blueBox" class="btn square"></div>
                     </td>
                     <td>
-                        <audio src="sounds/Note4.mp3" type="audio/mp3"></audio>
+                        <audio src="sounds/yellowBox.mp3" id="yellowBoxAudio" type="audio/mp3"></audio>
                         <div id="yellowBox" class="btn square"></div>
                     </td>
                 </tr>
             </table>
-        </div><!-- /.blog-main -->
-    </div><!-- /.row -->
+        </div>
+    </div>
     <div class="row">
-        <div class="col-xs-6">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 90" preserveAspectRatio="xMinYMin meet" class="svg-content"><defs><style>.cls-1{fill:#dfa047;}.cls-2{fill:#f1d167;}.cls-3{font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: x-large;}</style></defs><title>Bottom_bar</title><g id="Bottom_bar"><path class="cls-1" d="M495,90H465V60h30a15,15,0,0,1,0,30Z"/><rect class="cls-2" x="205" y="60" width="255" height="30"/><path class="cls-1" d="M150,90H75C33.58,90,0,56.61,0,15.41V0H150V22.87A37.26,37.26,0,0,0,187.5,60H200V90Z"/><text class="cls-3" transform="translate(215 84.1)">HMT3DESIGN.COM</text></svg>
+        <div class="col-md-6 col-sm-6 col-xs-11">
+            <div class="svg-container">
+                <svg viewBox="0 0 510 90"><defs><style>.cls-1{fill:#dfa047;}.cls-2{fill:#f1d167;}.cls-3{font-family: 'Six Caps', sans-serif; font-size: x-large;}</style></defs><title>Bottom_bar</title><path class="cls-1" d="M495,90H465V60h30a15,15,0,0,1,0,30Z"/><rect class="cls-2" x="205" y="60" width="255" height="30"/><path class="cls-1" d="M150,90H75C33.58,90,0,56.61,0,15.41V0H149.5V22.87C149.5,43.47,169.29,60,190,60h10V90Z"/><text class="cls-3" transform="translate(215 84.1)">HMT3DESIGN.COM</text><</svg>
+            </div>
         </div>
     </div>
 </div><!-- /.container -->

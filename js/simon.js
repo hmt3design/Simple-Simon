@@ -8,18 +8,26 @@ $(document).ready(function(){
     var squares = $('.square');
     var counter = 0;
     var enableClicks = false;
-    var gameRound = 1;
+    var gameRound = 0;
 
     //Create click function for buttons
     var userTurn = function () {
       enableClicks = true;
     };
 
+    var playAudio = function (audioClass) {
+        document.getElementById(audioClass + "Audio").play();
+    };
+
     // user turn
     $(".square").click(function(){
         var squareClicked = this;
+        var associatedAudio = $(this).attr("id");
+
         if (enableClicks) {
             animate(squareClicked);
+            playAudio(associatedAudio);
+
             if(squareClicked === simonArray[counter]) {
                 counter += 1;
                 if (counter === simonArray.length) {
@@ -35,8 +43,9 @@ $(document).ready(function(){
                 alert("Sorry, you entered the wrong sequence. Game over. Want to try again?");
                     simonArray = [];
                     counter = 0;
-                    gameRound = 1;
+                    gameRound = 0;
                     $("#start").prop("disabled", false);
+                    $("#counter").text("ROUND: " + gameRound);
             }
         }
     });
@@ -61,6 +70,7 @@ $(document).ready(function(){
         $("#start").prop("disabled", true);
     });
 
+
     //Simon's turn, which feeds into the user's turn
     //"square" passes the div id to the animate function, so the colors don't have to be specifically identified
     var simonTurn = function (simonArray) {
@@ -73,7 +83,7 @@ $(document).ready(function(){
         });
         userTurn();
         gameRound += 1;
-            document.getElementById('counter').innerHTML = gameRound;
+            $('#counter').text("ROUND: " + gameRound);
             // console.log(gameRound);
     };
 
