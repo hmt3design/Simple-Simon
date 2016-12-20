@@ -57,6 +57,18 @@ h1, p, span, #start, .tb1, .tb2 {
     fill: #ff9966;
     margin-bottom: 5px;
 }
+
+.cls-5 {
+    fill: #3366ff;
+    margin-bottom: 5px;
+}
+
+.cls-6 {
+    fill: #ccddff;
+    margin-bottom: 5px;
+}
+
+
 .svg-container {
     display: inline-block;
     position: relative;
